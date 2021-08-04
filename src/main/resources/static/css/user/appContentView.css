@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.appContentViewDiv{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding:20px 10px;
+}
+
+.appContentViewDiv label{
+	font-family: 'Black Han Sans', sans-serif;
+    font-size: 35px;
+}
+.appContentViewDiv p{
+	padding-left: 20px;
+	margin-bottom: 30px;
+	font-size: 19px;
+}
+.appContentViewDiv textarea{
+	font-size: 19px;
+	padding:10px;
+	outline: none;
+	resize: none;
+	height: 250px;
+}

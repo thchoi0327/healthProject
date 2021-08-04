@@ -1,0 +1,89 @@
+@charset "UTF-8";
+.messagePage {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  visibility: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(192, 192, 192, 0.8);
+}
+
+.msgBox {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border: 3px solid #26292d;
+  background-color:#fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.msgBoxHeader{
+	height: 80px;
+	padding: 0 30px;
+	border-bottom: 3px solid #26292d;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.sendMsgImg{
+	width: 60px;
+	height: 60px;
+}
+.closeMsgImg{
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.sendToBox{
+	height: 70px;
+	display: flex;
+	border-bottom: 3px solid #26292d;
+}
+.sendToBox > label{
+	width: 150px;
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 28px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-right: 3px solid #26292d;
+}
+.sendToBox > input{
+	flex:1;
+	border: none;
+	font-size: 17px;
+	font-weight: bold;
+	padding-left: 15px;
+}
+
+
+.msgContentBox{
+	padding: 15px;
+	font-size: 18px;
+	font-weight: bold;
+	border: none;
+	resize: none;
+	outline: none;
+	height: 350px;
+	border-bottom: 3px solid #26292d;
+}
+
+#msgSubmitBtn{
+	width: 150px;
+	height: 80px;
+	margin: 5px auto 0;
+	color:#f3f3f3;
+	background-color: #26292d;
+	cursor: pointer;
+	border: none;
+	border-radius: 10px;
+	font-size: 32px;
+	font-family: 'Black Han Sans', sans-serif;
+}

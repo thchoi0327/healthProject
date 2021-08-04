@@ -1,0 +1,73 @@
+@charset "UTF-8";
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.innerDiv{
+	width: 100%;
+	border: 3px solid#e8e8e8;
+	padding: 50px 100px 100px 100px;
+	border-radius: 10px;
+}
+.innerDivTemp04{
+	width: 1200px;
+}
+.logoBoard{
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+.innerTable{
+	width:100%;
+}
+tr,td,th{
+	border: 1px solid #e8e8e8;
+	overflow: hidden;
+}
+tr{
+	height: 40px;
+}
+.tableTdNick, .tableTdSubject, .tableTdDate, .tableTdHit {
+	text-align: center;
+}
+.tableTdTitle{
+	padding-left: 30px;
+}
+.tableTdTitle > a{
+	cursor: pointer;
+	color:black;
+}
+
+.lessonToWrite{
+	width: 200px;
+	height: 80px;
+	
+}
+
+
+.innerBtnBox{
+	width:300px;
+	height:80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size:30px;
+	border: none;
+	font-family: 'Black Han Sans', sans-serif;
+	border-radius:10px;
+	color:#26292d; 
+	cursor: pointer;
+	margin-top:50px;
+}
+.wirteBtn{
+	margin: 4px 10px 0 0;
+}
+.innerBtnBox > img {
+	animation: move infinite 1s;
+}
+@keyframes move{
+	0% {transform: translateX(0)}
+	50% {transform: translateX(10px)}
+	100% {transform: translateX(0)}
+}

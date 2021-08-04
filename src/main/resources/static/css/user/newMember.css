@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;    
+    list-style: none;
+}
+body{
+    width: 100vw;    
+    height:150vh;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.loadingDiv,.emailNumCheck{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    visibility: hidden;
+    background-color: rgba(192,192,192,0.8);
+}
+
+/* 로딩중 */
+.loadingDiv > img{
+    position: relative;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width: 64px;
+    height: 64px;
+    animation: spin infinite 1s ;
+}
+@keyframes spin {
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)};
+}
+
+
+
+
+
+
+
+/* 이메일 인증번호 팝업*/
+.emailinnerCheck{
+    position: relative;
+    top: 50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width: 500px;
+    height: 250px;
+    border: 5px solid #26292d;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.innerMailHeader{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    border-bottom: 1px solid #ddd;
+}
+.innerMailHeader > img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.innerMailBody{
+    width: 100%;
+    height: 225px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding : 0 20px;
+}
+.innerMailBody > input{
+    height: 60px;
+}
+.innerMailBody > input[type="text"]{
+    width: 330px;
+    border: 3px solid #ddd;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.innerMailBody > input[type="button"]{
+    width: 100px;
+    border:none;
+    border-radius: 15px;
+    background-color: #ed2823;
+    color:#fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 본 페이지 */
+.full{
+    position: absolute;
+    width: 100%;
+    padding: 180px 0 0 40px;
+    transition: all 2s;
+}
+
+.container{
+    width: 80vw;
+    padding:0 70px;
+    margin: 0 auto;
+}
+.intro_ment{
+    font-size: 40px;
+    padding-left: 40px;
+    margin-bottom: 50px;
+}
+.innerBox{
+    width: 750px;
+    margin: 0 auto;
+}
+.label{
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+}
+input[type="text"],input[type='password'] {
+    width: 100%;
+    height: 50px;
+    padding-left: 30px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+.idBox{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+#user_id,#user_nick{
+    width: 650px;
+}
+#idCheckBtn,#nickCheckBtn{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    border-radius: 13px;
+    border:none;
+    background-color: #DA1A32;
+    color:#fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 15px;
+}
+#user_id,#user_name,#user_pw2,#user_email1,.userPhoneBox,#user_nick{
+    margin-bottom: 50px;
+}
+#user_pw{
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+/*     이메일        */
+.emailBox{
+	width:100%;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+}
+#user_email1 {
+    width: 250px;
+    border-bottom:1px solid #ddd;
+}
+.emailBox > p{
+    width: 30px;
+    text-align: center;
+    font-size: 24px;
+}
+#user_email2{ 
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border:1px solid #ddd
+}
+#mailBtn{
+	margin-left:10px;
+	width: 100px;
+	height: 50px;
+	border: none;
+	border-radius: 10px;
+	background-color: #ed2823;
+	color:#fff;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+
+
+
+/* 핸드폰 */
+.userPhoneBox{
+	width: 100%;
+	padding-top:10px;
+	display: flex;
+	align-items: baseline;
+}
+#userPhone1{
+	width: 150px;
+	height: 50px;
+    font-size: 20px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border:1px solid #ddd;
+    text-align: center;
+}
+.userPhoneBox > p{
+    width: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+#userPhone2,#userPhone3{
+	width: 250px;
+	height: 50px;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+#submitBtn{
+    width: 100%;
+    height: 90px;
+    background-color: #DA1A32;
+    color:#fff;
+    border-radius: 16px;
+    border:none;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s
+}
+#submitBtn:hover{
+    font-size: 27px;
+}

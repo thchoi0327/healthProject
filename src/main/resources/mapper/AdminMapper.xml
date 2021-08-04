@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.health.mapper.AdminMapper">
+
+	<!-- 강사로 등업신청하는 리스트(신청서) -->
+	<select id="teacherListAll" resultType="com.health.dto.TeacherDTO">
+		SELECT * FROM teacher WHERE grade='1'
+	</select>
+	
+	
+	<!-- 강사 등업 승인 -->
+	<update id="teacherUpgrade">
+		UPDATE teacher SET grade='3' WHERE bid=#{bid}
+	</update>
+	<update id="userUpgrade">
+		UPDATE userboard SET user_grade = '3' WHERE user_nick = #{tname} 
+	</update>
+	
+	<!-- 강사 등급 내리기 -->
+	<delete id="teacherDelete">
+		DELETE FROM teacher WHERE bid=#{bid}
+	</delete>
+	<update id="userDownGrade">
+		UPDATE userboard SET user_grade = '0' WHERE user_nick = #{tname}
+	</update>
+	
+	
+	
+	
+	
+	<!-- 등업이 완료된 강사 리스트 -->
+	<select id="teacherOkList" resultType="com.health.dto.TeacherDTO">
+		SELECT * FROM teacher WHERE grade='3'
+	</select>
+
+	
+	
+	
+	
+	<!-- 모든 회원 리스트 뽑아오기 -->
+	<select id="allUserList" resultType="com.health.dto.UserDTO">
+		SELECT * FROM userBoard
+	</select>
+	
+	
+	<!-- 강사 한명 뽑아오기 -->
+	<select id="teacherContentView" resultType="com.health.dto.TeacherDTO">
+		SELECT * FROM teacher WHERE bid=#{bid}
+	</select>
+	
+	<select id="allUserNickGet" resultType="com.health.dto.UserDTO">
+		SELECT user_nick FROM userboard
+	</select>
+	
+</mapper>	 

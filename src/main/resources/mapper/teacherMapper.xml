@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.health.mapper.TeacherMapper">
+
+	<!-- 강사등록서 작성후 DB에 올림 -->
+	<insert id="insertAdmissionSubmit">
+		 <![CDATA[
+		     insert into teacher values(
+		     #{tid},#{tname},#{subject},#{introduce},#{area},#{license},
+		     sysdate,#{fileName},1,BOARD_SEQ.nextval,500
+		   	 )
+		 ]]>
+	</insert>
+			
+	<!-- 승인된 강사 전체 리스트 출력 -->
+	<select id="selectteacherOKListAll" resultType="com.health.dto.TeacherDTO">
+		 <![CDATA[
+		select * from teacher where grade=3 order by point DESC
+		]]>
+	</select>
+	
+	<!-- 운동종목으로 강사 리스트 출력 -->
+	<select id="selectteacherListSearchAll" resultType="com.health.dto.TeacherDTO">
+		 <![CDATA[
+			select * from teacher where subject like '%'||#{search}||'%'
+		  ]]>
+	</select>
+	<!-- grade=3 , 운동종목으로 강사 리스트 출력 -->
+	<select id="selectteacherOKListSearchAll" resultType="com.health.dto.TeacherDTO">
+		 <![CDATA[
+			select * from teacher where subject like '%'||#{search}||'%' and grade='3'
+		  ]]>
+	</select>
+	
+	<!-- 강사 content 1개 -->
+	<select id="selectTeacherContentView" resultType="com.health.dto.TeacherDTO">
+		 <![CDATA[
+			select * from teacher where bid=#{bid}
+			]]>
+	</select>
+	
+	<!-- 강사 content 1개의 모든 리뷰 끌고오기 -->
+	<select id="selectTeacherReview" resultType="com.health.dto.ReviewDTO">
+		select * from review where bid=#{bid} ORDER BY rdate ASC
+	</select>
+	
+	<!-- 리뷰작성후 DB에 올림 -->
+	<insert id="insertReviewWrite" >
+		 <![CDATA[
+		     insert into review values(
+		     #{tname},#{subject},#{score},#{sname},#{rating},#{bid},SYSDATE
+		   	 )
+		 ]]>
+	</insert>
+	
+	<update id="updatePoint">
+		UPDATE teacher SET point = point + #{score} WHERE bid = #{bid}
+	</update>
+	
+	
+	<insert id="applicationWrite">
+		INSERT INTO application VALUES (app_seq.NEXTVAL,#{ateacherNick},#{astudentNick},#{astudentTel},#{awantStartDate},#{awantEndDate},#{awantTime},#{astudentText},SYSDATE)
+	</insert>
+	
+</mapper>	 

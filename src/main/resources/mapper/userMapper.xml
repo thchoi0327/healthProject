@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.health.mapper.UserMapper">
+	<!-- 회원가입 -->
+	<insert id="joininsert">
+     <![CDATA[
+    INSERT INTO userboard VALUES(
+	#{user_id},#{user_pw},#{user_name},#{user_tel},#{user_email},'남자','0',#{user_nick}
+	)
+   ]]>
+  </insert>
+  
+  <!-- 로그인/로그아웃 -->
+  <select id="selectLoginCheck" resultType="com.health.dto.UserDTO">
+		SELECT * FROM userboard WHERE user_id=#{user_id} AND user_pw=#{user_pw} 
+  </select>
+
+  <!-- ID 중복 확인 -->
+  <select id="selectUserid" resultType="com.health.dto.UserDTO">
+		SELECT * FROM userboard where user_id=#{user_id} 
+  </select>
+  
+  <!-- 닉네임 중복 확인 -->
+  <select id="selectUsernick" resultType="com.health.dto.UserDTO">
+		SELECT * FROM userboard where user_nick=#{user_nick} 
+  </select>
+  
+  <!--  모든 메시지 가져오기 -->
+  <select id="getAllMsg" resultType="com.health.dto.MessageDTO">
+  	SELECT * FROM message WHERE mReceiveNick=#{userNick} ORDER BY mcategory ASC
+  </select>
+  
+  <!--  메시지 자세히 보기 -->
+  <select id="getContentViewMsg" resultType="com.health.dto.MessageDTO">
+  	SELECT * FROM message WHERE mid=#{mid}
+  </select>
+  
+  <!--  메세지 읽음 처리 -->
+  <update id="msgRead">
+  	UPDATE message SET mcategory='1' WHERE mid=#{mid}
+  </update>
+  
+  <!-- 나에게 온 모든 수강신청서 가져오기 -->
+  <select id="getAllApplication" resultType="com.health.dto.ApplicationDTO">
+  	SELECT * FROM application WHERE ateacherNick = #{ateacherNick}
+  </select>
+  
+  <!-- 수강 신청서 한 개 가져오기 -->
+  <select id="getApplicationContent" resultType="com.health.dto.ApplicationDTO">
+  	SELECT * FROM application WHERE aid = #{aid}
+  </select>
+  
+  <!-- 아이디 찾김 -->
+  <select id="searchUserId" resultType="com.health.dto.UserDTO">
+  	SELECT user_id,user_email FROM userboard WHERE user_name=#{user_name} AND user_email=#{user_email} AND user_tel=#{user_tel}
+  </select>
+  
+  <!-- 비밀번호 찾기 -->
+  <select id="searchUserPw" resultType="com.health.dto.UserDTO">
+  	SELECT user_pw,user_email FROM userboard WHERE user_name=#{user_name} AND user_id=#{user_id} AND user_email=#{user_email}
+  </select>
+  
+  <!-- 마의 페이지 내 정보 가져오기 -->
+  <select id="getMyInfo" resultType="com.health.dto.UserDTO">
+  	SELECT * FROM userboard WHERE user_nick = #{user_nick}
+  </select>
+  
+  <!-- 마의 페이지 내 강사 정보 가져오기 -->
+  <select id="getTeacherInfo" resultType="com.health.dto.TeacherDTO">
+  	SELECT * FROM teacher WHERE tname = #{user_nick}
+  </select>
+  
+  <!-- 유저 비밀번호 변경 -->
+  <update id="changeUserPw">
+  	UPDATE userboard SET user_pw = #{user_pw} WHERE user_nick = #{user_nick}
+  </update>
+  
+</mapper>	 

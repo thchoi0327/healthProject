@@ -1,0 +1,131 @@
+@charset "UTF-8";
+
+
+.contentfull{
+  width: 1200px;
+  border: 3px solid #ddd;
+  border-radius: 10px;
+  font-family: 'Black Han Sans', sans-serif;
+}
+.contentInner{
+	width: 100%;
+	display: flex;
+}
+
+
+
+
+
+.contentInnerLeft{
+	width: 500px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.contentInnerLeft  > img {
+	width: 500px;
+	height: 500px;
+}
+
+
+
+
+
+.contentInnerRight{
+	width: 680px;
+	display: flex;
+	flex-direction: column;
+	padding:40px 0 0 20px;
+}
+.contentInnerRight label{
+	font-size: 37px;
+	color:#606060;
+}
+.contentInnerRight > div{
+	height: 67px;
+	display:flex;
+	align-items:center;
+	padding-left: 15px;
+	font-size: 30px;
+	color:black;
+}
+.contentInnerRight input[type='text']{
+	height: 67px;
+	padding-left: 15px;
+	border:none;
+	outline: none;
+	font-size: 30px;
+	font-family: 'Black Han Sans', sans-serif;
+	color:black;
+}
+.contentInnerRight textarea{
+	width: 660px;
+	resize: none;
+	border: none;
+	outline: none;
+	font-size: 30px;
+	font-family: 'Black Han Sans', sans-serif;
+	padding:15px;
+}
+
+.contentTelBox{
+	display: flex;
+}
+
+
+
+.contentInnerbottom{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+
+
+
+
+
+
+
+.btnBoxForWriter{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+
+
+
+.btnBoxForWriter input[type='button']{
+	width:150px;
+	height: 80px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	background-color: #26292d;
+	color:#f3f3f3;
+	cursor: pointer;
+	margin-right: 15px;
+	font-size: 30px;
+	font-family: 'Black Han Sans', sans-serif;
+	outline: none;
+}
+
+
+.boardMsgWriteBtn{
+	width: 180px;
+	height: 80px;
+	cursor: pointer;
+	font-size: 30px;
+	font-family: 'Black Han Sans', sans-serif;
+	background-color: #ed2823;
+	color:#26292d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px auto;
+	border-radius: 10px;
+}
+

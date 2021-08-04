@@ -1,0 +1,90 @@
+@charset "UTF-8";
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+	color:black;
+}
+
+.innerBox{
+	width: 100%;
+}
+.innerListBox{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.noBoard{
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 50px;
+	padding-bottom: 30px;
+}
+.innerlist{
+	width:260px;
+	height: 300px;
+	border: 3px solid #ddd;
+	border-radius:10px;
+	margin-bottom: 50px;
+	transition: all .3s;
+	display: flex;
+	flex-direction: column;
+	margin-right: 55px;
+	cursor: pointer;
+}
+.dtoImgBox{
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+}
+.innerlist:hover .dtoImg{
+	width: 280px;
+	height: 220px;
+	border-bottom: 1px solid #ddd;
+}
+.dtoImg{
+	width: 260px;
+	height: 200px;
+	transition: all .3s;
+}
+.dtoTitle{
+	border-bottom: 1px solid #ddd;
+}
+.dtoNick, .dtoTitle{
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	font-size: 17px;
+	padding-left: 5px;
+}
+
+
+
+
+.innerBtnBox{
+	width:300px;
+	height:80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size:30px;
+	border: none;
+	font-family: 'Black Han Sans', sans-serif;
+	border-radius:10px;
+	color:#26292d; 
+	cursor: pointer;
+}
+.wirteBtn{
+	margin: 4px 10px 0 0;
+}
+.innerBtnBox > img {
+	animation: move infinite 1s;
+}
+@keyframes move{
+	0% {transform: translateX(0)}
+	50% {transform: translateX(10px)}
+	100% {transform: translateX(0)}
+}

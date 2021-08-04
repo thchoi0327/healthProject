@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.health.mapper.TogetherMapper">
+
+	<!-- 같이 운동해요 작성후 DB에 올림 -->
+	<insert id="insertBoardwrite">
+		 <![CDATA[
+		     insert into together values(
+		     BOARD_SEQ.nextval,#{bname},#{title},#{bcontent},#{subject},sysdate,
+		     0,BOARD_SEQ.currval,0,0,#{fileName}
+		   	 )
+		 ]]>
+	</insert>
+	<!-- 전체 리스트 출력 -->
+	<select id="selectBoardListAll" resultType="com.health.dto.TogetherDTO">
+		 <![CDATA[
+		select * from
+		(select rownum rnum,a.* from
+		(select * from together order by bgroup desc,bstep asc) a)
+		]]>
+	</select>
+	<!-- 운동종목 검색 리스트 출력 -->
+	<select id="selectBoardListSearchAll" resultType="com.health.dto.TogetherDTO">
+		 <![CDATA[
+			select * from together where subject like '%'||#{search}||'%'
+		  ]]>
+	</select>
+	
+	<!-- content 1개 -->
+	<select id="selctBoardContentView" resultType="com.health.dto.TogetherDTO">
+		 <![CDATA[
+			select * from together where bid=#{bid}
+			]]>
+	</select>
+	
+	<!-- 게시물 댓글 불러오기  -->
+	<select id="commentListAll" resultType="com.health.dto.CommentDTO">
+		 <![CDATA[
+			select * from comments where bid=#{bid} order by commentNo desc
+			]]>
+	</select>
+	
+	<!-- 댓글 작성하기 -->
+	<insert id="insertCommentWrite">
+		 <![CDATA[
+		    insert into comments values(
+		    #{bid},#{sname},#{bcontent},sysdate,0,0,0,Comment_SEQ.nextval,#{user_grade}
+		    )
+		 ]]>
+	</insert>
+	
+	<!--  댓글 삭제하기 -->
+	<delete id="commentDelete">
+		delete comments where commentNo=#{commentNo}
+	</delete>
+	
+	<!--  댓글 수정하기 -->
+	<update id="commentUpdate">
+		UPDATE comments SET bcontent=#{bcontent} WHERE commentNo=#{commentNo}
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	<!-- content 수정하기 -->
+	<update id="updateBoardModify">
+		 <![CDATA[
+			UPDATE together SET title=#{title},bcontent=#{bcontent}
+			WHERE bid=#{bid}
+			]]>
+	</update>
+	<!-- 삭제하기 -->
+	<delete id="deleteBoardDelete">
+		delete together where bid=#{bid}
+	</delete>
+	
+	
+
+	
+	<!-- 조회수 1증가 -->
+	<update id="updateUpHit">
+	 	<![CDATA[
+			update together set bhit=bhit+1 where bid=#{bid}
+		]]>
+	</update>
+
+</mapper>	 

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+	<mapper namespace="com.health.mapper.ShareMapper">
+	<!-- 구매 -->
+	<select id="buylistView" resultType="com.health.dto.Share_TradeDto">
+	select * from shareTrade_board where shareTrade_category='구매' order by shareTrade_num asc
+	</select>
+	
+	<!-- 판매 -->
+	<select id="selllistView" resultType="com.health.dto.Share_TradeDto">
+	select * from shareTrade_board where shareTrade_category='판매'order by shareTrade_num asc
+	</select>
+	
+	<!-- 빌려줍니다 -->
+	<select id="lendlistView" resultType="com.health.dto.Share_LendDto">
+	select * from shareLend_board where shareLend_category='빌려줌' order by shareLend_num asc
+	</select>
+	
+	<!-- 빌려봅니다. -->
+	<select id="rentlistView" resultType="com.health.dto.Share_LendDto">
+	select * from shareLend_board where shareLend_category='빌림' order by shareLend_num asc
+	</select>
+	
+	<!-- 판매 구매  글작성 -->
+	<insert id="insertBoardWrite">
+     <![CDATA[
+     insert into shareTrade_board values(
+	shareTrade_seq.nextval,#{shareTrade_id},#{shareTrade_category},#{shareTrade_nick},#{shareTrade_title},
+	#{shareTrade_content},#{shareTrade_region},#{shareTrade_tel},#{shareTrade_money},0,#{shareTrade_file},sysdate)
+   	]]>
+   
+  	</insert>
+  	
+  	<!--  빌려요 빌려줍니다 글작성 -->
+  	<insert id="insertlendBoardWrite">
+     <![CDATA[
+     insert into shareLend_board values(
+	shareLend_seq.nextval,#{shareLend_id},#{shareLend_category},#{shareLend_nick},#{shareLend_title},
+	#{shareLend_content},#{shareLend_region},#{shareLend_tel},#{shareLend_money},0,#{shareLend_file},sysdate)
+   	]]>
+  	</insert>
+  
+    <!-- 구매판매 제목누를때 Content View -->
+  	<select id="selectBoardContent_view" resultType="com.health.dto.Share_TradeDto">
+  		select * from shareTrade_board where shareTrade_num=#{shareTrade_num}
+  	</select>
+  	
+  	 <!-- 빌려줌 빌려봄 제목누를때 Content View -->
+  	<select id="selectlendBoardContent_view" resultType="com.health.dto.Share_LendDto">
+  		select * from shareLend_board where shareLend_num=#{shareLend_num}
+  	</select>
+  	
+  	<!-- 검색 -->
+  	<select id="searchlist" resultType="com.health.dto.Share_TradeDto">
+  	 <![CDATA[
+  		SELECT * FROM shareTrade_board WHERE 1=1 AND ${opt} like '%' || #{search} || '%'
+  	]]>
+  	</select>
+  	
+  	
+  	
+  	<!-- 장비 구매/판매 게시판 글 삭제 -->
+  	<delete id="tradeBoardDelete">
+  		DELETE FROM shareTrade_board WHERE shareTrade_num = #{shareTrade_num}
+  	</delete>
+  	<delete id ="lendBoardDelete">
+  		DELETE FROM shareLend_board WHERE shareLend_num = #{shareLend_num}
+  	</delete>
+  	
+  	
+  	
+  	
+  	<!-- 장비 구매/판매 게시판 글 수정 -->
+  	<update id="tradeBoardUpdate">
+  		UPDATE shareTrade_board SET
+  		
+  		shareTrade_title = #{shareTrade_title},
+  		shareTrade_region = #{shareTrade_region},
+  		shareTrade_money = #{shareTrade_money},
+  		shareTrade_tel = #{shareTrade_tel},
+  		shareTrade_content = #{shareTrade_content}
+  		
+  		WHERE shareTrade_num = #{shareTrade_num}
+  		
+  	</update>
+  	
+  	<update id ="lendBoardUpdate">
+  		UPDATE shareLend_board SET
+  		
+  		shareLend_title = #{shareLend_title},
+  		shareLend_region = #{shareLend_region},
+  		shareLend_money = #{shareLend_money},
+  		shareLend_tel = #{shareLend_tel},
+  		shareLend_content = #{shareLend_content}
+  		
+  		WHERE shareLend_num = #{shareLend_num}
+  	</update>
+  	
+  	
+  	
+</mapper>	 

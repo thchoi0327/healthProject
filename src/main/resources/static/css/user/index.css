@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	list-style: none;
+	text-decoration: none;
+	color:black;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	visibility:hidden;
+	opacity:0;
+	transition: all 2s;
+}
+
+
+
+/* 백그라운드 동영상 css  */
+.full{
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	transition:all 2s;
+}
+
+.full video{
+	width: 100%; 
+}
+
+

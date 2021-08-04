@@ -1,0 +1,139 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;    
+    list-style: none;
+    overflow: hidden;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+}
+.searchMain{
+    position: relative;
+    width: 800px;
+    height: 650px;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: f3f3f3;
+}
+.searchHeader{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.SHleft, .SHright{
+    height: 100%;
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    cursor: pointer;
+    /* font-family: 'Black Han Sans', sans-serif; */
+    font-size: 20px;
+    transition:all .3s;
+    border-bottom: 3px solid black;
+}
+.SHRightSpan, .SHleftSpan{
+	width: 150px;
+	height: 1px;
+	border: 2px solid green;
+	transition: all .3s;
+}
+.SHleftSpan {
+	display: block;
+}
+.SHRightSpan{
+	display: none;
+}
+
+.SHleft{
+	border-right:3px solid black;
+}
+.SHleft:hover, .SHright:hover{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.searchBody{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.searchBody h1{
+	margin: 15px 0 0 30px;
+}
+.searchBody label{
+	font-weight: bold;
+	font-size: 27px;
+	margin: 20px 0 0 45px;
+	
+}
+.searchBody input[type='text']{
+	width: 500px;
+	height: 50px;
+	padding-left: 15px;
+	border-radius: 5px;
+	font-size: 16px;
+	margin: 15px 0 0 45px;
+}
+.searchPw{
+    display: none;
+}
+
+.searchBody input[type='button']{
+	width: 200px;
+	height: 80px;
+	font-size: 23px;
+	font-weight: bold;
+	margin:15px auto 0;
+	background-color: #ed2823;
+	border-radius:8px;
+	color:#fff;
+	cursor: pointer;
+	border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 로딩화면 */
+.loadingDiv{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    visibility: hidden;
+    background-color: rgba(192,192,192,0.8);
+}
+.loadingDiv > img{
+    position: relative;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width: 64px;
+    height: 64px;
+    animation: spin infinite 1s ;
+}
+@keyframes spin {
+    0%{transform: rotate(0deg)}
+    100%{transform: rotate(360deg)};
+}

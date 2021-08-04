@@ -1,0 +1,301 @@
+@charset "UTF-8";
+.teacherInnerFull{
+	width: 1230px;
+	display: flex;
+	flex-direction: column;
+}
+.tInnerTop{
+	width: 100%;
+	display: flex;
+	border-bottom: 2px solid #e8e8e8;
+}
+.teacherimgBox{
+	position:relative;
+	width: 600px;
+	height: 600px;
+	padding:50px;
+	border-right: 2px solid #e8e8e8;
+}
+
+.teacherImg{
+	width: 500px;
+	height: 500px;
+	border-radius: 10px;
+}
+.crownImg{
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	left:4px;
+	top:-13px;
+}
+.teacherIntro{
+	width: 600px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+}
+
+.teacherIntro label{
+	height: 50px;
+	display:flex;
+	align-items:center;
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 35px;
+	color:#808080;
+	padding-left: 25px;
+}
+.teacherIntro p{
+	height: 100px;
+	display: flex;
+	align-items: center;
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 50px;
+	color:black;
+	padding-left: 55px;
+}
+
+
+
+.InnerMiddle{
+	width: 100%;
+	display: flex;
+	border:1px solid #e8e8e8;
+}
+.teacherIMLeft, .teacherIMRight{
+	width: 600px;
+	height:600px;
+	resize: none;
+	border: none;
+	outline: none;
+	padding:50px;
+	font-size: 23px;
+	font-weight: 700;
+}
+
+.teacherIMLeft{
+	border-right:1px solid #e8e8e8; 
+}
+
+
+
+.InnerBottom{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 50px 100px;
+}
+.noReviewMent{
+	font-size: 40px;
+	font-family: 'Black Han Sans', sans-serif;
+}
+
+.reviewList{
+	width: 90%;
+	height:130px;
+	display:flex;
+	flex-direction:column;
+	margin:10px auto;
+	height: 100px;
+	border-radius: 8px;
+	border: 3px solid #26292d;
+}
+.reviewTop{
+	width: 100%;
+	height: 40px;
+	border-bottom: 3px solid #26292d;
+	
+	padding:0 25px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.reviewlistContent{
+	width: 100%;
+	resize: none;
+	outline: none;
+	border: none;
+	padding:5px 20px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+
+
+
+
+
+#reviewWriteContent{
+	width: 90%;
+	height: 100%;
+	resize: none;
+	outline: none;
+	border: none;
+}
+#reviewWriteBtn{
+	width: 10%;
+	height: 100%;
+	font-family: 'Black Han Sans', sans-serif;
+	color:#26292d;
+	background-color: #fcce00;
+	font-size: 20px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+
+.writeReviewBox{
+	width: 100%;
+	height:110px;
+	display: flex;
+	border:3px solid #26292d;
+	border-radius: 5px;
+	margin-top: 40px;
+}
+
+
+.writeReviewInnerTop{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+
+#rating{
+	flex:1;
+	height: 50px;
+	resize: none;
+	outline: none;
+	border: none;
+	padding: 10px;
+}
+
+#score{
+	width: 500px;
+	height: 30px;
+}
+
+.boardBtnBox{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 30px auto;
+	
+}
+
+
+.boardMsgWriteBtn{
+	width: 180px;
+	height: 80px;
+	cursor: pointer;
+	font-size: 30px;
+	font-family: 'Black Han Sans', sans-serif;
+	background-color: #ed2823;
+	color:#26292d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+}
+.boardBtnBox > div:nth-child(1){
+	margin-right: 20px;
+	background-color:  #fcce00;
+}
+.scoreStar{
+	display: flex;
+}
+
+
+
+
+/* 신청서 팝업창 css*/
+.applicationDiv{
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	left: 50%;
+	top: 50%;
+	transform:translate(-50%,-50%);
+	z-index: 9999;
+	visibility: hidden;
+	background-color: rgba(192,192,192,0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.applicationInner{
+	width: 800px;
+	height: 800px;
+	border: 3px solid #26292d;
+	border-radius: 10px;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+}
+.applicationInner label{
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 35px;
+	margin-left: 5px;
+}
+.applicationDateBox{
+	display: flex;
+	align-items: baseline;
+	justify-content: flex-start;
+	padding-left: 30px;
+	margin:10px 0 30px 0;
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 20px;
+}
+.applicationInner input[type='date']{
+	width: 150px;
+	height: 40px;
+	border-radius: 8px;
+}
+.applicationInner textarea{
+	height: 300px;
+	resize: none;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	outline: none;
+	padding:10px;
+	font-size: 18px;
+}
+#awantTime{
+	width:500px;
+	height:40px;
+	margin:10px 0 30px 30px;
+	border-radius:5px;
+	padding-left: 10px;
+	 
+}
+.applicationInnerTop{
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	padding:10px 20px;
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+.applicationInnerMent{
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 40px;
+}
+.applicationInnerClose{
+	cursor: pointer;
+}
+
+#applicationBtn{
+	width: 180px;
+	height: 80px;
+	cursor: pointer;
+	margin: 15px auto;
+	font-size: 18px;
+	background-color:  #fcce00;
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 30px;
+	border: none;
+	border-radius: 8px;
+}
+
+

@@ -1,0 +1,86 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;    
+    list-style: none;
+}
+
+body{
+    width: 100vw;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none; 
+}
+.full{
+    position: absolute;
+    width: 100%;
+    padding-top:100px;
+    display: flex;
+    justify-content: center;
+    transition: all 2s;
+}
+.inner{
+    width: 1400px;
+}
+.top{
+    width: 1400px;
+    height: 250px;
+    display: flex;
+    justify-content: space-between;
+    padding:20px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 35px;
+}
+.ti01{
+	background-image: url(../../img/lessonimg/introHealth.png);
+	background-size:  100% 80%;
+	background-repeat: no-repeat;
+}
+.ti02{
+	background-image: url(../../img/lessonimg/teacherList.png);
+	background-size:  100% 80%;
+	background-repeat: no-repeat;
+}
+.ti03{
+	background-image: url(../../img/lessonimg/together.png);
+	background-size:  100% 85%;
+	background-repeat: no-repeat;
+}
+.ti04{
+	background-image: url(../../img/lessonimg/QnA.png);
+	background-size:  100% 85%;
+	background-repeat: no-repeat;
+}
+.topinner{
+	position:relative;
+    flex: 1;
+    height: 100%;
+    border: 3px solid #26292d;
+    border-radius:10px;
+    transition: all .3s;
+    cursor: pointer;
+    text-align: center;
+    padding-top:80px;
+}
+.topinner > p{
+	width:250px;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform:translateX(-50%);
+}
+.topinner:hover{
+    transform: translateY(15px);
+}
+.ti01, .ti02, .ti03{
+    margin-right: 25px;
+}
+.temp{
+	width: 100%;
+	margin-top: 10px;
+}
+

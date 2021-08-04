@@ -1,0 +1,125 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+	overflow: hidden;
+}
+
+.full {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+  transition: all 2s;
+  padding-left: 60px;
+}
+
+
+.adminInnerBox {
+  width: 1750px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.adminIntro {
+  font-size: 40px;
+  font-family: "Black Han Sans", sans-serif;
+  margin-bottom: 3
+}
+.adminInnerBox01 {
+  flex: 1;
+  display: flex;
+  border:3px solid black;
+  border-radius: 10px;
+}
+.AIBLeft {
+  position:relative;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  border-right:3px solid black;
+}
+
+.adminMenu {
+  flex: 1;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-family: "Black Han Sans", sans-serif;
+  transition: all .3s;
+}
+.adminMenu:hover{
+	font-size: 55px;
+}
+.adminMenu01, .adminMenu02{
+	border-bottom: 3px solid black;
+}
+.AIBCenter {
+  width: 750px;
+  height: 750px;
+  overflow: scroll;
+}
+
+
+
+
+
+
+
+
+.AIBRight{
+	width: 750px;
+	height: 750px;
+	border-left: 3px solid black;
+	overflow: scroll;
+	position: relative;
+}
+.firstImg{
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	left:50%; top:50%;
+	transform:translate(-50%,-50%)
+}
+
+.AIBCenter, .AIBRight{
+-ms-overflow-style: none; 
+}
+.AIBCenter::-webkit-scrollbar{
+  display:none; 
+}
+.AIBRight::-webkit-scrollbar{
+  display:none; 
+}
+
+
+
+
+
+table{
+	width: 100%;
+}
+table,tr,td,th{
+	border: 1px solid #e8e8e8;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+

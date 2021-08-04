@@ -1,0 +1,72 @@
+@charset "UTF-8";
+.innerFull{
+	width: 1230px;
+	border: 3px solid  #26292d;
+	border-radius:7px;
+	display: flex;
+	flex-direction: column;
+	margin:20px 0;
+	padding:50px 50px;
+}
+
+.innerFull > p{
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 60px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.innerFull label{
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 40px;
+	margin-bottom: 5px;
+	display: flex;
+	align-items: baseline;
+}
+
+.innerFull label img{
+	width: 32px;
+	height: 32px;
+	margin-left:10px;
+}
+
+#subject,#file,#area,#license,#introduce{
+	margin-bottom: 60px;
+	border-radius: 8px;
+}
+
+#subject,#area{
+	height: 60px;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 20px;
+}
+
+#license,#introduce{
+	height: 200px;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 20px;
+	resize: none;
+	border: 2px solid #26292d;
+}
+
+#submitBtn{
+	width: 300px;
+	height: 80px;
+	margin: 0 auto;
+	border-radius: 5px;
+	font-family: 'Black Han Sans', sans-serif;
+	font-size: 37px;
+	border:none;
+	background-color: #fcce00;
+	color:#26292d;
+	cursor: pointer;
+	transition: all .3s;
+}
+#submitBtn:hover{
+	width: 310px;
+	height: 82px;
+	font-size: 40px;
+}
+

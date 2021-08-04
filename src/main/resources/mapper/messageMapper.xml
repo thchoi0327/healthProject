@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.health.mapper.MsgMapper">
+
+	<insert id="sendWrite">
+		INSERT INTO message VALUES (msg_seq.nextval,#{msendNick},#{mreceiveNick},#{mcontent},0,SYSDATE)
+	</insert>
+
+	<select id="countimgMsg" resultType="com.health.dto.MessageDTO">
+		SELECT mid FROM message WHERE mReceiveNick=#{mreceiveNick} AND mcategory=0
+	</select>
+	
+	<select id="checkUser" resultType="com.health.dto.UserDTO">
+		SELECT user_id FROM userBoard WHERE user_nick = #{mreceiveNick}
+	</select>
+	
+	<delete id="deleteMsg">
+		DELETE FROM message WHERE mid=#{mid}
+	</delete>
+	
+	<insert id="adminSendALLUSER">
+		INSERT INTO message VALUES (msg_seq.nextval,'관리자',#{mreceiveNick},#{mcontent},0,SYSDATE)
+	</insert>
+</mapper>	 
